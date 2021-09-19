@@ -7,7 +7,9 @@ A flicker lamp for Arduino with Quake styles.
 
 [And more games use the same patterns, first one is Quake from 1996](https://www.pcgamer.com/half-life-alyxs-lights-flicker-just-like-they-did-in-quake-almost-25-years-later/)
 
-So I made a emergency lamp flicker with the same original Quake styles, with some code adaptations.
+So I made a emergency lamp flicker with the same original Quake styles, with some code adaptations. The hardware:
+
+![sHardware](https://github.com/Pakequis/arduino-quake-flicker-lamp/blob/main/extras/circuit-1.jpg?raw=true)
 
 # The code:
 
