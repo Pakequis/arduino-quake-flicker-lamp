@@ -41,6 +41,8 @@ So for make this work with the Arduino and the LEDs, I get the pin 9 of the boar
 
 The FTIME value of 100 ms I get with a video of Quake gameplay and a vídeo editor app (Vegas Pro) and pen and paper.
 
+For power supply i use a usb cable for the arduino and a power bank.
+
 
 # Vídeo demo: 
 
