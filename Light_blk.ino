@@ -11,7 +11,7 @@
 #define LIGHT_STYLE 10	/* Flicker style */
 #define MAX_STYLES 11	/* Max light style index */
 
-#define FTIME 100  		/* Flicker time */
+#define FTIME 100  		/* Flicker time - 100 ms - I get it with a gameplay video and a video editor... */
 
 /* Original styles from https://github.com/id-Software/Quake/blob/master/qw-qc/world.qc */
 //
@@ -66,19 +66,19 @@
 void setup() 
 {
   pinMode(LED_BUILTIN, OUTPUT);
-  digitalWrite(LED_BUILTIN, LOW); 
+  digitalWrite(LED_BUILTIN, LOW); 	//Onboard LED off...
   pinMode(BLED, OUTPUT);
 
-  l = lightstyle[LIGHT_STYLE].length();
+  l = lightstyle[LIGHT_STYLE].length();	//Length of the string style
 }
 
 void loop() 
 {
   for (i = 0; i < l; i++)
   {
-    value = (lightstyle[LIGHT_STYLE][i]) - 'a';
-    map(value, 0, 26, 0, 255);
-    analogWrite(BLED, value);
-    delay(FTIME);
+    value = (lightstyle[LIGHT_STYLE][i]) - 'a'; //Get the value from a to z from the string array minus 'a' (ASCII 0x61). This returns a value from 0 to 26.
+    map(value, 0, 26, 0, 255); // convert from 0-26 to 0-255
+    analogWrite(BLED, value); // Put the value in the pin 9 (PWM)
+    delay(FTIME); // Wait the time for one step
   }
 }
