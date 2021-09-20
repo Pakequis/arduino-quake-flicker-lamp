@@ -39,11 +39,11 @@ So for make this work with the Arduino and the LEDs, I used the pin 9 of the boa
   }
 ```
 
-The FTIME value of 100 ms I get with a video of Quake gameplay and a vídeo editor app (Vegas Pro) and pen and paper. 
+The FTIME value of 100 ms I used a video of Quake gameplay and a vídeo editor app (Vegas Pro) and pen and paper. 
 
 I tested with the classical "FLUORESCENT FLICKER" (10 - "mmamammmmammamamaaamammma"). For change the style, change the LIGHT_STYLE define value.
 
-For power supply I use a USB cable for the arduino and a power bank.
+For power supply I used a USB cable for the arduino and a power bank.
 
 
 # Vídeo demo: 
