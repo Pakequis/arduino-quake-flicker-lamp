@@ -15,7 +15,7 @@ So I made a emergency lamp flicker with the same original Quake styles, with som
 
 [First I get the original world.qc with the original styles.](https://github.com/id-Software/Quake/blob/bf4ac424ce754894ac8f1dae6a3981954bc9852d/QW/progs/world.qc#L307)
 
-For the Arduino version I get the styles and put in a string array: 
+For the Arduino version I took the styles and put then in a string array: 
 ```
 String  lightstyle[] = {
   "string1", 
