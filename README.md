@@ -27,7 +27,7 @@ String  lightstyle[] = {
 
 The Quake flicker use the letters a to z to indicate the brightness of the light. Where "a" is for total darkness and "z" for total brightness.
 
-So for make this work with the Arduino and the LEDs, I get the pin 9 of the board (both for Arduino Uno or Arduino Mini Pro) and use the analogWrite() to control the brightness. This require a conversion from "a" to "z" from the original code to 0-255 for the analogWrite() function. This is made whit this simple code, in the Arduino loop():
+So for make this work with the Arduino and the LEDs, I used the pin 9 of the board (both for Arduino Uno or Arduino Mini Pro) and the analogWrite() to control the brightness. This require a conversion from "a" to "z" from the original code to 0-255 for the analogWrite() function. This is made with this simple code, in the Arduino loop():
 
 ```
   for (i = 0; i < l; i++)
