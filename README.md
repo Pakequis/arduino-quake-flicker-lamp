@@ -15,7 +15,7 @@ So I made a emergency lamp flicker with the same original Quake styles, with som
 
 [First I get the original world.qc with the original styles.](https://github.com/id-Software/Quake/blob/bf4ac424ce754894ac8f1dae6a3981954bc9852d/QW/progs/world.qc#L307)
 
-For the Arduino version I took the styles and put then in a string array: 
+For the Arduino version I get the styles and put in a string array: 
 ```
 String  lightstyle[] = {
   "string1", 
@@ -27,23 +27,23 @@ String  lightstyle[] = {
 
 The Quake flicker use the letters a to z to indicate the brightness of the light. Where "a" is for total darkness and "z" for total brightness.
 
-So for make this work with the Arduino and the LEDs, I used the pin 9 of the board (both for Arduino Uno or Arduino Mini Pro) and the analogWrite() to control the brightness. This require a conversion from "a" to "z" from the original code to 0-255 for the analogWrite() function. This is made with this simple code, in the Arduino loop():
+So for make this work with the Arduino and the LEDs, I get the pin 9 of the board (both for Arduino Uno or Arduino Mini Pro) and use the analogWrite() to control the brightness. This require a conversion from "a" to "z" from the original code to 0-255 for the analogWrite() function. This is made whit this simple code, in the Arduino loop():
 
 ```
   for (i = 0; i < l; i++)
   {
-    value = (lightstyle[LIGHT_STYLE][i]) - 'a'; //Get the value from a to z from the string array minus 'a' (ASCII 0x61). This returns a value from 0 to 26.
-    map(value, 0, 26, 0, 255);    // convert from 0-26 to 0-255
+    value = (lightstyle[LIGHT_STYLE][i]) - 'a'; //Get the value from a to z from the string array minus 'a' (ASCII 0x61). This returns a value from 0 to 25.
+    value = map(value, 0, 25, 0, 255);    // convert from 0-25 to 0-255
     analogWrite(BLED, value);     // Put the value in the pin 9 (PWM)
     delay(FTIME);       // Wait the time for one step
   }
 ```
 
-The FTIME value of 100 ms I used a video of Quake gameplay and a vídeo editor app (Vegas Pro) and pen and paper. 
+The FTIME value of 100 ms I get with a video of Quake gameplay and a vídeo editor app (Vegas Pro) and pen and paper. 
 
 I tested with the classical "FLUORESCENT FLICKER" (10 - "mmamammmmammamamaaamammma"). For change the style, change the LIGHT_STYLE define value.
 
-For power supply I used a USB cable for the arduino and a power bank.
+For power supply I use a USB cable for the arduino and a power bank.
 
 
 # Vídeo demo: 

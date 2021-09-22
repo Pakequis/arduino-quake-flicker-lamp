@@ -77,7 +77,7 @@ void loop()
   for (i = 0; i < l; i++)
   {
     value = (lightstyle[LIGHT_STYLE][i]) - 'a'; //Get the value from a to z from the string array minus 'a' (ASCII 0x61). This returns a value from 0 to 26.
-    map(value, 0, 26, 0, 255); // convert from 0-26 to 0-255
+    value = map(value, 0, 25, 0, 255); // convert from 0-25 to 0-255
     analogWrite(BLED, value); // Put the value in the pin 9 (PWM)
     delay(FTIME); // Wait the time for one step
   }
